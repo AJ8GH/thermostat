@@ -3,21 +3,27 @@
   <head>
     <title>Thermostat</title>
     <script src="../src/thermostat.js"></script>
-    <script src="../jquery/jquery-3.6.0.js"></script>
-    <link></link>
+    <link rel="stylesheet" type="text/css" href="../public/style.css">
   </head>
   <body>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/interface.js"></script>
+
     <h1>Thermostat</h1>
 
-    <h2>Temperature Controls</h2>
-    <button>+</button>
-    <button>-</button>
-    <button>Reset</button><br>
+    <h2 id="temperature">Temperature</h2>
+    <button id="up">+</button>
+    <button id="down">-</button>
+    <button id="reset">Reset</button><br>
 
-    <button>Energy Usage</button>
+    <h3>Current Temperature:</h3>
+    <h3 id="current-temperature"></h3><br>
+    <input id="city" type="text" name="city" value=London>
+    <input id="go" type="button" Value="Go">
 
-    <p>Power Saving Mode <span>on</span></p>
-    <button>On</button>
-    <button>Off</button>
+    <h4>Power Saving Mode</h4>
+    <h4 id="psm-status">On</h4>
+    <button id="psm-on">On</button>
+    <button id="psm-off">Off</button>
   </body>
 </html>

@@ -27,16 +27,18 @@ class Thermostat {
   };
 
   powerSavingOn() {
-    this.temperature = 25;
-    return this.isPowerSavingMode = true;
+    this.isPowerSavingMode = true;
+    if(this.temperature > this.POWER_SAVING_MAX_TEMP) {
+      this.temperature = this.POWER_SAVING_MAX_TEMP;
+    };
   };
 
   powerSavingOff() {
-    return this.isPowerSavingMode = false;
+    this.isPowerSavingMode = false;
   };
 
   reset() {
-    return this.temperature = this.DEFAULT_TEMPERATURE;
+    this.temperature = this.DEFAULT_TEMPERATURE;
   };
 
   energyUsage() {

@@ -50,7 +50,10 @@ $(function() {
   });
 
   function updateWeather() {
-    $.get(`http://api.openweathermap.org/data/2.5/weather?q=${$('#city').val()}&APPID=d6215763932ba6dc5c6e90be8a1d2fed&units=metric`, function(data) {
+    let url = 'http://api.openweathermap.org/data/2.5/weather?q='
+    let city = $('#city').val()
+    let token = '&APPID=d6215763932ba6dc5c6e90be8a1d2fed&units=metric'
+    $.get(url + city + token, function(data) {
       $('#current-temperature').text(data.main.temp);
     });
   }

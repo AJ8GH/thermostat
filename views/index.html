@@ -2,8 +2,8 @@
 <html>
   <head>
     <title>Thermostat</title>
-    <script src="../src/thermostat.js"></script>
     <link rel="stylesheet" type="text/css" href="../public/style.css">
+    <script src="../src/thermostat.js"></script>
   </head>
   <body>
     <script src="../js/jquery.js"></script>
@@ -11,19 +11,31 @@
 
     <h1>Thermostat</h1>
 
-    <h2 id="temperature">Temperature</h2>
-    <button id="up">+</button>
-    <button id="down">-</button>
-    <button id="reset">Reset</button><br>
+    <section class="weather">
+      <h3 class="current-temp">Current Temperature in</h3><br>
+      <input id="city" type="text" name="city" value=London>
+      <button class="go" id="go">Go</button>
+      <aside>
+        <h3 id="current-temperature"></h3><span >°C</span><br>
+      </aside>
+    </section>
 
-    <h3>Current Temperature:</h3>
-    <h3 id="current-temperature"></h3><br>
-    <input id="city" type="text" name="city" value=London>
-    <input id="go" type="button" Value="Go">
+    <main class="temperature">
+      <h2 id="temperature">Temperature</h2>
+      <button id="up">+</button>
+      <button id="down">-</button>
+      <button id="reset">Reset</button><br>
+    </main>
 
-    <h4>Power Saving Mode</h4>
-    <h4 id="psm-status">On</h4>
-    <button id="psm-on">On</button>
-    <button id="psm-off">Off</button>
+    <section class="psm">
+      <h4 class="psm-title">Power Saving Mode:</h4>
+      <h4 id="psm-status">On</h4><br>
+      <button class="psm-button" id="psm-on">On</button>
+      <button class="psm-button" id="psm-off">Off</button>
+    </section>
+
+    <footer>
+      © Thermostat inc. 2021
+    </footer>
   </body>
 </html>

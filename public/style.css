@@ -1,13 +1,103 @@
+* {
+  text-align: center;
+  font-family: Arial;
+  box-sizing: border-box;
+  border: 0px;
+  margin: 0px;
+  font-size: 30px;
+}
+
+* body {
+  background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+}
+
 .low-usage {
-  color: green;
+  color: rgb(14, 191, 14);
 }
 
 .medium-usage {
-  color: Black;
+  color: rgb(0, 0, 0);
 }
 
 .high-usage {
-  color: red;
+  color: rgb(211, 4, 4);
+}
+
+h1 {
+  color: whitesmoke;
+  font-size: 80px;
+  margin-right: 100px;
+  margin-top: 50px;
+}
+
+#temperature {
+  font-size: 250px;
+}
+
+main {
+  margin-top: -120px;
+  margin-right: 500px;
+}
+
+.weather {
+  margin-left: 500px;
+  color: black;
+  margin-top: 60px;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.go {
+  height: 50px;
+  width: 60px;
+}
+
+input {
+  font-weight: 900;
+  font-size: 40px;
+  height: 50px;
+  text-align: center;
+  max-width: 190px;
+  background-color: #ffed4b;
+  color: rgb(41, 41, 41);
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-left: 100px;
+  box-shadow: 4px 4px #fdcd3b;
+}
+
+aside {
+  margin-top: 20px;
+  margin-left: 70px;
+}
+
+.current-temp {
+  font-size: 30px;
+}
+
+.psm-title {
+  font-size: 40PX;
+}
+
+.psm {
+  margin-left: 500px;
+  margin-top: 20px;
+  font-weight: 900;
+}
+
+.psm-button {
+  margin-top: 25px;
+  background-color: #ffed4b;
+  box-shadow: 4px 4px #fdcd3b;
+  width: 55px;
+  margin-left: 10px;
+  height: 50px;
+}
+
+section {
+  margin-top: 60px;
+  margin-left: 100px;
+  /* position: relative; */
 }
 
 h3 {
@@ -15,9 +105,34 @@ h3 {
 }
 
 button {
-  margin-bottom: 20px;
+  font-weight: 900;
+  background-color: #fdcd3b;
+  border-radius: 5px;
+  font-size: 30px;
 }
 
-form {
-  margin-top: 10px;
+#down, #up {
+  width: 55px;
+}
+
+#reset, #down, #up {
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 40px;
+  box-shadow: 4px 4px #ffed4b;
+}
+
+h4 {
+  display: inline;
+  margin-bottom: 40px;
+}
+
+footer {
+  text-align: center;
+  color: whitesmoke;
+  font-size: 20px;
+  position: fixed;
+  bottom: 20px;
+  margin-left: 50px;
 }

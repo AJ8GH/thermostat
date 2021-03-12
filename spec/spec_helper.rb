@@ -11,3 +11,7 @@ ENV['RACK_ENV'] = 'test'
 Capybara.app = ThermostatApp
 Capybara.server = :puma, { Silent: true }
 Capybara.default_driver = :selenium
+
+RSpec.configure do |config|
+  config.before(:each) { Thermostat.renew }
+end

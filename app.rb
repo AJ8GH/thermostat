@@ -3,6 +3,9 @@ require 'sinatra/base'
 require_relative 'lib/thermostat'
 
 class ThermostatApp < Sinatra::Base
+  before(:all) { thermostat.create }
+  before { @thermostat = Thermostat.instance }
+
   configure do
     enable :sessions
     set :session_secret, ENV['SESSION_SECRET']
@@ -13,18 +16,12 @@ class ThermostatApp < Sinatra::Base
   end
 
   get '/temperature' do
-    p thermostat = Thermostat.instance
-    p temperature = thermostat.temperature
+    temperature = @thermostat.temperature
     { temperature: temperature }.to_json
   end
 
   post '/temperature' do
-    thermostat = Thermostat.instance
-    p params
-    p params[:temperature]
-    p thermostat.temperature
-    thermostat.update_temperature(params[:temperature].to_i)
-    p thermostat.temperature
+    @thermostat.update_temperature(params[:temperature].to_i)
     { status: 200 }.to_json
   end
 end

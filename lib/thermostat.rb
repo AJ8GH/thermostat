@@ -7,6 +7,10 @@ class Thermostat
     @instance ||= new
   end
 
+  def self.renew
+    @instance = new
+  end
+
   def initialize
     @temperature = DEFAULT_TEMPERATURE
   end

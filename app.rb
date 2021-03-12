@@ -16,12 +16,19 @@ class ThermostatApp < Sinatra::Base
   end
 
   get '/temperature' do
-    temperature = @thermostat.temperature
-    { temperature: temperature }.to_json
+    {
+      temperature: @thermostat.temperature,
+      city: @thermostat.city,
+      psm: @thermostat.psm
+    }.to_json
   end
 
   post '/temperature' do
-    @thermostat.update_temperature(params[:temperature].to_i)
+    @thermostat.update_settings(
+      temperature: params[:temperature].to_i,
+      psm: params[:psm],
+      city: params[:city]
+    )
     { status: 200 }.to_json
   end
 end

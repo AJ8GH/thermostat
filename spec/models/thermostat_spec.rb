@@ -11,11 +11,4 @@ describe Thermostat do
       expect(subject.temperature).to be 20
     end
   end
-
-  describe '#update_temperature' do
-    it 'changes the tempurature' do
-      subject.update_temperature(21)
-      expect(subject.temperature).to be 21
-    end
-  end
 end

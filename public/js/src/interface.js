@@ -4,11 +4,12 @@ $(function() {
   const thermostat = new Thermostat;
 
   thermostat.getTemperature();
+
   setTimeout(() => {
     updateTemperature();
-  }, 50)
-
-  updateWeather();
+    updateWeather();
+    updatePSM();
+  }, 40);
 
   function updateTemperature() {
     $('#temperature').text(thermostat.temperature);
@@ -30,13 +31,14 @@ $(function() {
   $('#psm-on').on('click', function() {
     thermostat.powerSavingOn();
     updateTemperature();
-    thermostat.postTemperature();
     updatePSM();
+    thermostat.postTemperature();
   });
 
   $('#psm-off').on('click', function() {
     thermostat.powerSavingOff();
     updatePSM();
+    thermostat.postTemperature();
   });
 
   $('#reset').on('click', function() {
@@ -47,15 +49,16 @@ $(function() {
 
   function updatePSM() {
     $('#psm-status').text(function() {
-      if(thermostat.isPowerSavingMode) {
+      if(thermostat.isPowerSavingMode === true) {
         return 'On';
       }
-        return 'Off';
+      return 'Off';
     });
   }
 
   $('#go').on('click', function() {
     updateWeather();
+    thermostat.postTemperature();
   });
 
   function updateWeather() {

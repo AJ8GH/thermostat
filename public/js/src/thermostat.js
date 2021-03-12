@@ -52,22 +52,22 @@ class Thermostat {
     };
   };
 
-  // getCurrentTemperature(callback) {
-  //   $.get('/temperature', function(res) {
-  //     var data = JSON.parse(res)
-  //     callback(data);
-  //   });
-  // }
-
   getTemperature() {
     $.get('/temperature', (data) => {
-      const temperature = JSON.parse(data).temperature;
-      this.setTemperature(temperature);
+      let settings = JSON.parse(data);
+
+      this.temperature = settings.temperature;
+      $('#city').val(settings.city);
+      this.isPowerSavingMode = (settings.psm === 'On');
     });
   }
 
   postTemperature() {
-    $.post('/temperature', { temperature: $('#temperature').text() })
+    $.post('/temperature', {
+      temperature: $('#temperature').text(),
+      psm: $('#psm-status').text(),
+      city: $('#city').val()
+    })
   }
 
   setTemperature(new_temperature) {

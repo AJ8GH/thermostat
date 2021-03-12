@@ -11,12 +11,8 @@ class Thermostat
     @temperature = DEFAULT_TEMPERATURE
   end
 
-  def up
-    self.temperature += 1
-  end
-
-  def down
-    self.temperature -= 1
+  def update_temperature(new_temperature)
+    self.temperature = new_temperature
   end
 
   private

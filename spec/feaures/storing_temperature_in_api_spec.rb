@@ -1,5 +1,5 @@
-feature 'storing temperature in an API' do
-  xscenario 'temparature persists' do
+feature 'persisting temperature settings' do
+  scenario 'temparature persists across session' do
     visit '/'
 
     expect(page).to have_content('Thermostat')

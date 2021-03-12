@@ -2,7 +2,12 @@
 
 $(function() {
   const thermostat = new Thermostat;
-  updateTemperature();
+
+  thermostat.getTemperature();
+  setTimeout(() => {
+    updateTemperature();
+  }, 50)
+
   updateWeather();
 
   function updateTemperature() {
@@ -13,16 +18,19 @@ $(function() {
   $('#up').on('click', function() {
     thermostat.up();
     updateTemperature();
+    thermostat.postTemperature();
   });
 
   $('#down').on('click', function() {
     thermostat.down();
     updateTemperature();
+    thermostat.postTemperature();
   });
 
   $('#psm-on').on('click', function() {
     thermostat.powerSavingOn();
     updateTemperature();
+    thermostat.postTemperature();
     updatePSM();
   });
 
@@ -34,6 +42,7 @@ $(function() {
   $('#reset').on('click', function() {
     thermostat.reset();
     updateTemperature();
+    thermostat.postTemperature();
   });
 
   function updatePSM() {

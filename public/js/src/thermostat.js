@@ -52,6 +52,28 @@ class Thermostat {
     };
   };
 
+  // getCurrentTemperature(callback) {
+  //   $.get('/temperature', function(res) {
+  //     var data = JSON.parse(res)
+  //     callback(data);
+  //   });
+  // }
+
+  getTemperature() {
+    $.get('/temperature', (data) => {
+      const temperature = JSON.parse(data).temperature;
+      this.setTemperature(temperature);
+    });
+  }
+
+  postTemperature() {
+    $.post('/temperature', { temperature: $('#temperature').text() })
+  }
+
+  setTemperature(new_temperature) {
+    this.temperature = new_temperature;
+  }
+
   _isMaximumtemperature() {
     if(this.isPowerSavingMode) {
       return this.temperature >= this.POWER_SAVING_MAX_TEMP;

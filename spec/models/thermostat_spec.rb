@@ -12,17 +12,10 @@ describe Thermostat do
     end
   end
 
-  describe '#up' do
-    it 'increments the tempurature' do
-      subject.up
+  describe '#update_temperature' do
+    it 'changes the tempurature' do
+      subject.update_temperature(21)
       expect(subject.temperature).to be 21
-    end
-  end
-
-  describe '#down' do
-    it 'decrements the tempurature' do
-      subject.down
-      expect(subject.temperature).to be 19
     end
   end
 end

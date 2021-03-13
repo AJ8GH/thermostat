@@ -3,12 +3,14 @@ class Thermostat
 
   attr_reader :temperature, :psm, :city
 
-  def self.instance
-    @instance ||= new
-  end
+  class << self
+    def instance
+      @instance ||= new
+    end
 
-  def self.renew
-    @instance = new
+    def renew
+      @instance = new
+    end
   end
 
   def initialize

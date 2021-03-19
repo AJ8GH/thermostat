@@ -2,6 +2,10 @@
 
 Interactive thermostat application built in JavaScript
 
+See the deployed app:
+
+[Thermostat](http://thermo-js-stat.surge.sh/)
+
 ![thermostat](public/images/thermostat.png)
 
 ## Dependencies
